@@ -1,3 +1,4 @@
+# pyright: strict
 import timeit   #小さい Python コードをの時間を計測
 
 def test(n): 
