@@ -30,8 +30,10 @@ sensor = requests.get("http://localhost:61208/api/3/sensors")
 
 #sysfsから取得
 freq = {}
-if os.access(""
-)
+if os.access("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq",os.R_OK):
+    for i in range(cpunum):
+    
+
 
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
