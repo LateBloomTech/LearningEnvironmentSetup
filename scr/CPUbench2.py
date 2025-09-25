@@ -1,0 +1,37 @@
+import datetime
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import threading
+import typing
+
+import requests
+
+
+def monitoring(
+    queue:"multiprocessing.Queue[list[typing.Any]]"
+    event:threading.Event,
+    cpunum:int,
+    epoch:datetime.datetime,
+):
+
+data = []
+while not event.is_set():
+    datum:dict[str,typing.Any] = {"time":0,"cpu":{},"sensor":{}}
+
+
+#glances(linux機能から取得)
+datum["time"] = (datetime.datetime.now() - epoch).seconds
+percpu = requests.get("http://localhost:61208/api/3/cpu")
+sensor = requests.get("http://localhost:61208/api/3/sensors")
+
+#sysfsから取得
+freq = {}
+if os.access(""
+)
+
+
+#参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
