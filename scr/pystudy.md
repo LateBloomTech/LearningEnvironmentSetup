@@ -12,4 +12,6 @@ VSCにて入力しようとするとpylanceなる拡張機能がbasicにとり�
 strictモードを体験する為、今まで問題なく動いてたCPUbench.pyにて# pyright:strictを先頭に置くとエラーが３つ出現。とりあえず引き続きbasicで様子見ます。
 詳細https://qiita.com/simonritchie/items/33ca57cdb5cb2a12ae16
 
-WSLを用いてLinuXの仮想化を行い検証を行うか、出来るならコードを改変し、WINDOWS環境で実行できないか今後検討する。
+**9/26**
+CPUbench2.py数行追加。
+CPUbench2.py　WSLを用いてLinuXの仮想化を行い検証を行うか、出来るならコードを改変し、WINDOWS環境で実行できないか今後検討する。
