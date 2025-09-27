@@ -14,4 +14,7 @@ strictモードを体験する為、今まで問題なく動いてたCPUbench.py
 
 **9/26**
 CPUbench2.py数行追加。
+
+**9/27**
+CPUbench2.py数行追加。
 CPUbench2.py　WSLを用いてLinuXの仮想化を行い検証を行うか、出来るならコードを改変し、WINDOWS環境で実行できないか今後検討する。

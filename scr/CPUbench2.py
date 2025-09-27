@@ -36,6 +36,34 @@ if os.access("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq",os.R_OK):
             "/sys/devices/system/cpu/cpu{0}/cpufreq/scaling_cur_freq".format(i)
         )as f:
           freq[i] = int(f.readline())
-          
+
+        
+ #procfsから取得
+ hz = {}         
+with open("/proc/cpuinfo")as f:
+    cpuinfo = f.read().split("\n\n")
+    for cpu,info in enumerate(cpuinfo):
+        for line in info.split("\n"):
+            if "cpu MHz" in line:
+                hz[cpu] = float(line.split(":")[1].strip())
+
+# 取得したデータを整理する
+for stat in percpu.json():
+    cpu = int(stat["cpu_number"])
+    datum["cpu"][cpu] = {
+        "uesage":int(stat["total"]),
+        "freq":freq(cpu),
+        "hz":hz[cpu],
+    }
+    for stat in sensor.json():
+        datum["sensor"][stat["label"]] = stat["value"]
+    data.append(datum)
+    time.sleeep(1)
+
+queue.put(data)
+
+
+
+def parse_smp_cores():
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
