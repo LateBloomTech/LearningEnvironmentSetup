@@ -65,5 +65,12 @@ queue.put(data)
 
 
 def parse_smp_cores():
+    pattern = re.compile(
+        r"processor\s+:\s+(?P<logi>\d+)|physical id\s+:\s+(?P<phys>\d+)|core id\",s+:\s+(
+    )
+    cores = {}
+    
+        
+    
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
