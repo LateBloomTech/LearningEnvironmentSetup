@@ -69,6 +69,8 @@ def parse_smp_cores():
         r"processor\s+:\s+(?P<logi>\d+)|physical id\s+:\s+(?P<phys>\d+)|core id\",s+:\s+(
     )
     cores = {}
+    with open("/proc/cpuinfo")as f:
+        cpuinfo = f.read().split("\n\n")
     
         
     
