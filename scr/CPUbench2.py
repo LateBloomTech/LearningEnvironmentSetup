@@ -71,7 +71,19 @@ def parse_smp_cores():
     cores = {}
     with open("/proc/cpuinfo")as f:
         cpuinfo = f.read().split("\n\n")
-    
+        for block in cpuinfo:
+            if len(block) == 0:
+                continue
+            coreinfo = {}
+            for m in re.finditer(pattern, block):
+                coreinfo.update({k: int(v) for k, v in m.groupdict().items() if v})
+            # CPUパッケージあたりの最大コアIDが2^16以下であるという前提で。
+            key = str(coreinfo["phys"] << 16 | coreinfo["core"])
+            if key not in cores:
+                cores[key] = []
+            cores[key].append(coreinfo["logi"])
+
+    return cores
         
     
 
