@@ -1,4 +1,6 @@
 # pythonコード学習記録
+**10/1**
+CPUbench2.py引き続き数行追加
 
 **9/30**
 CPUbench2.py 引き続き数行追加

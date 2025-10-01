@@ -84,7 +84,13 @@ def parse_smp_cores():
             cores[key].append(coreinfo["logi"])
 
     return cores
-        
+
+
+
+def bench_7z(
+    queue: "multiprocessing.Queue[dict[str, typing.Any]]",
+    cpu: int,
+)        
     
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
