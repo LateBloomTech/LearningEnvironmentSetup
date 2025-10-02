@@ -90,7 +90,12 @@ def parse_smp_cores():
 def bench_7z(
     queue: "multiprocessing.Queue[dict[str, typing.Any]]",
     cpu: int,
-)        
+    epoch:datetime.datetime,
+):
+    comm = shutil.which("7z") or sys.exit("needs 7z command")
+    os.sched_setaffinity(0,{cpu})
+    result = subprocess.run([comm, "b","-mmt1"], stdout=subprocess.PIPE)
+            
     
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
