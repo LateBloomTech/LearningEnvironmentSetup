@@ -96,7 +96,14 @@ def bench_7z(
     os.sched_setaffinity(0,{cpu})
     result = subprocess.run([comm, "b","-mmt1"], stdout=subprocess.PIPE)
  if result.returncode != 0:
-        sys.exit("failed to {0} on cpu {1}".format(comm, cpu))            
-    
+        sys.exit("failed to {0} on cpu {1}".format(comm, cpu)) 
+
+    end = (datetime.datetime.now() - epoch).seconds
+    data = []
+    for line in result.stdout.decode("utf-8").splitlines():
+        if line.startswith("Tot:"):
+            data = line.split()
+            break
+
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
