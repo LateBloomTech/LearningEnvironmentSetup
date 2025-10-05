@@ -104,6 +104,13 @@ def bench_7z(
         if line.startswith("Tot:"):
             data = line.split()
             break
+    queue.put(
+        {
+            "end": end,
+            "result": (int(data[2]) + int(data[3])) / 2,
+        }
+    )
+
 
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
