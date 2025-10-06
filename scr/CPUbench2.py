@@ -112,5 +112,11 @@ def bench_7z(
     )
 
 
+if__name__=="__main__":
+#glancesをdaemonで起動
+glances = shutil.which("glances") or sys.exit("needs glances command")
+daemon = subprocess.popen(
+[glances,"-w","--disable-webui"],
 
+)
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
