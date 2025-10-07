@@ -163,7 +163,15 @@ https://qiita.com/nak435/items/800dbda782f4fe9c7df1
 https://qiita.com/sakai00kou/items/e2523b6c195693e8f184
 
 ## 4 テスト.
-単体テストから行っていく。
-
+テストハードウェア　ノートPC、デスクトップPC
+テストIDE　VSC
+単体テスト
+可能な限りホワイトボックステスト
+ボトムアップテスト
+CPUbench.py
+単体テスト→結合テスト→システムテスト
+可能な限りホワイトボックステスト
+ボトムアップテスト
+の方向性で行っていく。
 
 https://qiita.com/mooooroi/items/a2461c5406ba4b1f0414

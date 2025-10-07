@@ -117,6 +117,11 @@ if__name__=="__main__":
 glances = shutil.which("glances") or sys.exit("needs glances command")
 daemon = subprocess.popen(
 [glances,"-w","--disable-webui"],
-
+stdout=subprocess.PIPE,
+stderr=subprocess.STDOUT,
+bufsize=0,
+pipesize=0,
 )
+os.sched_setaffinity(daemon.pid,{1})
+
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
