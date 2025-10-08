@@ -124,4 +124,12 @@ pipesize=0,
 )
 os.sched_setaffinity(daemon.pid,{1})
 
+#ベンチマーク処理開始
+do_bench = bench_7z
+data["benchmark"] = []
+start = (datetime.datetime.now() - epoch).secconds
+reset = {
+    "time":(datetime.datetime.now() - epoch).seconds,
+}
+
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
