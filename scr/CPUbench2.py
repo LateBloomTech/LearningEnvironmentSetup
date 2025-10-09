@@ -131,5 +131,12 @@ start = (datetime.datetime.now() - epoch).secconds
 reset = {
     "time":(datetime.datetime.now() - epoch).seconds,
 }
+data["benchmark"] = []
+start = (datetime.datetime.now() - epoch).seconds
+reset = {
+    "time":(datetime.datetime.now() - epoch).seconds,
+    "cpus":dict.fromkeys(range(cpunum),{end:0,"result":0}),
+}
+
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
