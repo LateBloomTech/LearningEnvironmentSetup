@@ -134,6 +134,7 @@ reset = {
 }
 date.[benchmark].append(rest)
 time.sleep(3)
-patterns = [(x,) for x in range(cpunum)]
-
+patterns = [(x,) for x in range(cpunum)] #single core
+patterns = [(x,) for x in range(cpunum)] # single core
+patterns.extend([tuple(v)for _, v in parse _smp_cores().items])
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
