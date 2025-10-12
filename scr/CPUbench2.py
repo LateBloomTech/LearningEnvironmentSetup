@@ -136,5 +136,10 @@ date.[benchmark].append(rest)
 time.sleep(3)
 patterns = [(x,) for x in range(cpunum)] #single core
 patterns = [(x,) for x in range(cpunum)] # single core
-patterns.extend([tuple(v)for _, v in parse _smp_cores().items])
+patterns.extend([tuple(v)for _, v in parse _smp_cores().items]) # 同時マルチスレッティング
+patterns.append(tuple([x for x in range(0, cpunum, 2)])# マルチスレッド無しの偶数コア、マルチスレッドなしならコアにかかわらず
+patterns.append(tuple([x for x in range(1, cpunum, 2)]))#　マルチスレッドなしの奇数コア、マルチスレッド無しならコアにかかわらず
+patterns.append(tuple([x for x in range(cpunum)])) # 全コア
+
+
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
