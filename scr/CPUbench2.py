@@ -140,6 +140,18 @@ patterns.extend([tuple(v)for _, v in parse _smp_cores().items]) # 同時マル�
 patterns.append(tuple([x for x in range(0, cpunum, 2)])# マルチスレッド無しの偶数コア、マルチスレッドなしならコアにかかわらず
 patterns.append(tuple([x for x in range(1, cpunum, 2)]))#　マルチスレッドなしの奇数コア、マルチスレッド無しならコアにかかわらず
 patterns.append(tuple([x for x in range(cpunum)])) # 全コア
+for pattern in pattern:
+    print("{}".format(i),end=",file=sys.stderr")
+    bench[i] = {}\
+    bench[i]["queue"] = multiprocessing.Queue()
+    bench[i]["proc"] = multiprocessing.Process(
+        target=do_bench,
+        args=(
+            bench[i]["queue"],
+            i,
+            epoch,    
+        ),
+    )
 
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
