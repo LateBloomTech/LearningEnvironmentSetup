@@ -152,6 +152,8 @@ for pattern in pattern:
             epoch,    
         ),
     )
-
-
+    bench[i]["queue"],
+    if not bench[i]["proc"].pid:
+        sys.exit("failed to start benchmark process")
+    print(file=sys.stderr)
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
