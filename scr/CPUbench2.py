@@ -156,4 +156,11 @@ for pattern in pattern:
     if not bench[i]["proc"].pid:
         sys.exit("failed to start benchmark process")
     print(file=sys.stderr)
+
+    for i in pattern:
+        bench[i]["proc"].join()
+        if bench[i]["proc"].exitcode != 0:
+        sys.exit("failed benchmark process")
+        result = bench[i]["queue"].get()
+
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
