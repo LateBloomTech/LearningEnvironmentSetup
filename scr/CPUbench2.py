@@ -162,5 +162,7 @@ for pattern in pattern:
         if bench[i]["proc"].exitcode != 0:
         sys.exit("failed benchmark process")
         result = bench[i]["queue"].get()
+        benchmark_result.append(end)
+     date["benchmark"].extend(benchmark_result)
 
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
