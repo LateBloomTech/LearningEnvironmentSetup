@@ -164,5 +164,8 @@ for pattern in pattern:
         result = bench[i]["queue"].get()
         benchmark_result.append(end)
      date["benchmark"].extend(benchmark_result)
-
+     reset = {
+            "time": (datetime.datetime.now() - epoch).seconds,
+            "cpu": dict.fromkeys(range(cpunum), {"end": 0, "result": 0}),
+        }
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
