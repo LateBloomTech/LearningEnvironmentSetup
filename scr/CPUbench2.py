@@ -168,4 +168,6 @@ for pattern in pattern:
             "time": (datetime.datetime.now() - epoch).seconds,
             "cpu": dict.fromkeys(range(cpunum), {"end": 0, "result": 0}),
         }
+        data["benchmark"].append(reset.copy())
+        time.sleep(30)
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
