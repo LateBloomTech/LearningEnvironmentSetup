@@ -172,4 +172,15 @@ for pattern in pattern:
         time.sleep(30)
         reset["taime"] = (datetime.datetime.now() - epoch).seconds
         data["benchmark"].append(reset)
+
+        #取得したデータを出力する
+        even.set()
+        data["monitoring"] = queue.get()
+        print(json.dumps(data))
+
+        #モニタースレッドとグラスデーモンを纏める
+        event.set()
+        monitor.join()
+        daemon.terminate()
+
 #参考https://gihyo.jp/admin/serial/01/ubuntu-recipe/0724
