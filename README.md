@@ -4,8 +4,7 @@
 ![Fundamental](img/Fundamental-Information-Technology-Engineer.jpg)
 ## 1. このプロジェクトについて
 本プロジェクトは、自身のAI開発・機械学習における **「開発環境の壁」と「基礎知識の壁」** という2つの課題を解決するため、要件定義から始まるアジャイルな開発アプローチを用いて、持続可能な学習・開発環境を構築する試みです。
->現在は学習範囲の広がりと共にstudy.mdにて日々のITに関する学習内容を公開。
-詳細は→をクリック　[sutdy.mdリンク](LearningEnvironmentSetup/study.md)
+>現在は学習範囲の広がりと共に`study.md`にて日々のITに関する学習内容を公開。　[sutdy.mdリンク](LearningEnvironmentSetup/study.md)
 
 ## 2. 背景・課題
 1. 開発環境における課題
