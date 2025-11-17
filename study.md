@@ -1,6 +1,29 @@
 #　ITパスポート、基本情報技術者、IT全般の学習メモ
 
 ## 基本情報技術者
+11/17　AM
+線形探索をpythonにて実際に組む。
+def linseach(data,target):
+    index=0
+    while index<len(data):
+        if data[index] == target:
+            return index
+        index += 1
+    return -1
+
+data=[60,12,89,74,99,65,88,90,12,7,6,9,10]
+target=6
+
+result = linseach(data,target)
+
+if result != -1:
+    print(str(target)+"はインデックス"+str(result)+"にあります")
+else:
+    print(str(target)+"はリストにありません")
+結果6はインデックス10にあります
+
+続いてそれを元に、二分探索法を組むも、エラーとなる。
+
 11/16
 2日ほどアップデート出来ておりませんでした。
 いずれもPythonで実行　for文法。一部dowhileはPythonだと実行不可能で有る事が判明。
