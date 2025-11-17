@@ -1,6 +1,12 @@
 #　ITパスポート、基本情報技術者、IT全般の学習メモ
 
 ## 基本情報技術者
+11/17 PM
+バッチ処理の勉強後、二分探索法再度挑戦するも、出来ない。
+ググってみると
+https://qiita.com/Yuya-Shimizu/items/12d365fa0cf79487389e
+コードに起こしてみよう。
+
 11/17　AM
 線形探索をpythonにて実際に組む。
 def linseach(data,target):
